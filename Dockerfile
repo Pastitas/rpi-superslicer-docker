@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM raspbian/raspbian:jessie
 
 # Setup demo environment variables
 ENV HOME=/root \
@@ -30,7 +30,10 @@ RUN git clone https://github.com/novnc/noVNC.git /root/noVNC \
 	&& git clone https://github.com/novnc/websockify /root/noVNC/utils/websockify \
 	&& rm -rf /root/noVNC/.git \
 	&& rm -rf /root/noVNC/utils/websockify/.git \
-	&& apt-get remove git
+
+# Clone Superslicer from github
+RUN git clone https://github.com/supermerill/SuperSlicer.git /root/superslicer \
+    &&  rm -rf /root/superslicer/.git \
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
