@@ -1,4 +1,4 @@
-FROM raspbian/raspbian:jessie
+FROM debian:jessie
 
 # Setup demo environment variables
 ENV HOME=/root \
