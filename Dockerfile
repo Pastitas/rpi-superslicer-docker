@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster-slim
 
 # Setup demo environment variables
 ENV HOME=/root \
