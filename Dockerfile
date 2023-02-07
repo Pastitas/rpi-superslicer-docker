@@ -34,7 +34,10 @@ RUN git clone https://github.com/novnc/noVNC.git /root/noVNC \
 
 # Clone Superslicer from github
 RUN git clone https://github.com/supermerill/SuperSlicer.git /root/superslicer \
-    &&  rm -rf /root/superslicer/.git
+    && rm -rf /root/superslicer/.git \
+    && cd /root/superslicer \
+    && ./BuildLinux.sh -u \
+    && ./BuildLinux.sh -dsi
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
