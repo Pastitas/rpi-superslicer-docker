@@ -7,17 +7,17 @@ services:
       # Adjust to your screen size
       - DISPLAY_WIDTH=1600
       - DISPLAY_HEIGHT=968
-    expose:
-      - 8080
+    ports:
+      - "8080:8080"
     networks:
       - x11
     deploy:
       resources:
           limits:
-            cpus: 0.50
+            cpus: '0.50'
             memory: 512M
           reservations:
-            cpus: 0.25
+            cpus: '0.25'd
             memory: 128M
 networks:
   x11:
