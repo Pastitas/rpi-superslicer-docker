@@ -22,14 +22,15 @@ RUN apt-get update && apt-get install -y \
 	x11vnc \
 	xterm \
 	xvfb \
+    ca-certificates \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
 # Clone noVNC from github
 RUN git clone https://github.com/novnc/noVNC.git /root/noVNC \
-	&& git clone https://github.com/novnc/websockify /root/noVNC/utils/websockify \
+	&& git clone https://github.com/novnc/websockify.git /root/noVNC/utils/websockify \
 	&& rm -rf /root/noVNC/.git \
-	&& rm -rf /root/noVNC/utils/websockify/.git \
+	&& rm -rf /root/noVNC/utils/websockify/.git
 
 # Clone Superslicer from github
 RUN git clone https://github.com/supermerill/SuperSlicer.git /root/superslicer \
