@@ -12,6 +12,7 @@ ENV HOME=/root \
 
 # Install git, supervisor, VNC, & X11 packages
 RUN apt-get update && apt-get install -y \
+    procps \
     python3 \
 	bash \
 	fluxbox \
